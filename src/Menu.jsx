@@ -1,15 +1,27 @@
-import './Menu.css'
+import "./Menu.css";
 
-function Menu() {
+/* recebe as funções mostrarLista e mostrarFormulario como parametros*/
+function Menu({ mostrarLista, mostrarFormulario }) {
     return (
-       <nav>
+        <nav>
             <h1>Lista de Tarefas</h1>
+
             <ul>
-                <li><a href="/about">Tarefas</a></li>
-                <li><a href="/contact">Adicionar Tarefa</a></li>
+                <li>
+                    /*Quando esse botão é clicado executa a função mostrarLista*/
+                    <button onClick={mostrarLista}>
+                        Tarefas
+                    </button>
+                </li>
+
+                <li>
+                    <button onClick={mostrarFormulario}>
+                        Adicionar Tarefa
+                    </button>
+                </li>
             </ul>
-       </nav>
-    )
+        </nav>
+    );
 }
 
 export default Menu;
