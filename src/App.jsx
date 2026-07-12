@@ -5,7 +5,7 @@ import Form from "./Form";
 
 function App() {
 
-    /*pagina → guarda qual tela deve ser exibida; setPagina() → muda o valor de pagina; "lista" → é o valor inicial quando a aplicação é aberta.*/
+    // pagina → guarda qual tela deve ser exibida; setPagina() → muda o valor de pagina; "lista" → é o valor inicial quando a aplicação é aberta.
     const [pagina, setPagina] = useState("lista"); 
     let conteudo;
 
@@ -17,7 +17,7 @@ function App() {
         setPagina("form");
     }
 
-    /*compara a pagina com a lista e coloca a pagina no conteudo*/
+    //compara a pagina com a lista e coloca a pagina no conteudo
     if (pagina === "lista") {
         conteudo = <Tarrefas />;
     } else {
@@ -26,10 +26,10 @@ function App() {
 
     return (
         <div>
-            /*chama a função menu com os parametros de mostrarLista e mostrarFormulario*/
+            {/* chama a função menu com os parametros de mostrarLista e mostrarFormulario */}
             <Menu mostrarLista={mostrarLista} mostrarFormulario={mostrarFormulario}/> 
             
-            /*mostra a pagina que ta na variavel conteudo*/
+            {/* mostra a pagina que ta na variavel conteudo */}
             {conteudo}
         </div>
     );

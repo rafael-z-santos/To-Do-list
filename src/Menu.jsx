@@ -1,6 +1,6 @@
 import "./Menu.css";
 
-/* recebe as funções mostrarLista e mostrarFormulario como parametros*/
+// recebe as funções mostrarLista e mostrarFormulario como parametros
 function Menu({ mostrarLista, mostrarFormulario }) {
     return (
         <nav>
@@ -8,7 +8,7 @@ function Menu({ mostrarLista, mostrarFormulario }) {
 
             <ul>
                 <li>
-                    /*Quando esse botão é clicado executa a função mostrarLista*/
+                    {/* Quando esse botão é clicado executa a função mostrarLista */}
                     <button onClick={mostrarLista}>
                         Tarefas
                     </button>
