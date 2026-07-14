@@ -4,33 +4,17 @@ import Tarrefas from "./Tarrefas";
 import Form from "./Form";
 
 function App() {
+     const [openForm, setOpenForm] = useState(false);
 
-    // pagina → guarda qual tela deve ser exibida; setPagina() → muda o valor de pagina; "lista" → é o valor inicial quando a aplicação é aberta.
-    const [pagina, setPagina] = useState("lista"); 
-    let conteudo;
-
-    function mostrarLista() {
-        setPagina("lista");
-    }
-
-    function mostrarFormulario() {
-        setPagina("form");
-    }
-
-    //compara a pagina com a lista e coloca a pagina no conteudo
-    if (pagina === "lista") {
-        conteudo = <Tarrefas />;
-    } else {
-        conteudo = <Form />;
-    }
+     function mostrarForm() {
+        setOpenForm(true);
+     }
 
     return (
         <div>
-            {/* chama a função menu com os parametros de mostrarLista e mostrarFormulario */}
-            <Menu mostrarLista={mostrarLista} mostrarFormulario={mostrarFormulario}/> 
-            
-            {/* mostra a pagina que ta na variavel conteudo */}
-            {conteudo}
+            <Menu mostrarForm={mostrarForm} />
+            <Tarrefas />
+            <Form isOpen={openForm} />
         </div>
     );
 }
