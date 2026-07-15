@@ -1,6 +1,6 @@
 import "./Menu.css";
 
-// recebe as funções mostrarLista e mostrarFormulario como parametros
+// recebe a função mostrarFormulario como parametros
 function Menu({ mostrarForm }) {
     return (
         <nav>

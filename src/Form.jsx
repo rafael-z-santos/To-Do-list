@@ -1,16 +1,16 @@
 import "./Form.css";
 
-export default function Form({ isOpen, onClose }) {
+export default function Form({ isOpen, fechaForm }) {
     if (isOpen) {
         return (
             <div className="modal-overlay">
                 <div className="modal">
-                    <button className="fechar" onClick={onClose}>
+                    <button className="fechar" onClick={fechaForm}>
                         ✕
                     </button>
 
                     <form className="form-tarefa">
-                        <h2>Nova Tarefa</h2>
+                        <h2>Nova Lista de Tarefas</h2>
 
                         <div className="campo">
                             <label htmlFor="titulo">Título</label>

@@ -44,14 +44,14 @@ body {
 
     border: none;
     border-radius: 50%;
-    background: #ef4444;
-    color: white;
+    color: rgb(255, 0, 0);
     font-size: 18px;
     cursor: pointer;
 }
 
 .fechar:hover {
     background: #dc2626;
+    color: rgb(255, 255, 255);
 }
 
 .form-tarefa {
