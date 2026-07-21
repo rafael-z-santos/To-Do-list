@@ -17,7 +17,7 @@ export default function Form({ isOpen, fechaForm }) {
                             <input
                                 type="text"
                                 id="titulo"
-                                placeholder="Digite o título da tarefa"
+                                placeholder="Digite o título da lista de tarefas"
                             />
                         </div>
 
@@ -26,7 +26,7 @@ export default function Form({ isOpen, fechaForm }) {
                             <textarea
                                 id="descricao"
                                 rows="5"
-                                placeholder="Descreva a tarefa"
+                                placeholder="Descreva a lista de tarefas"
                             ></textarea>
                         </div>
 
@@ -40,13 +40,8 @@ export default function Form({ isOpen, fechaForm }) {
                             </select>
                         </div>
 
-                        <div className="campo">
-                            <label htmlFor="data">Data de realização/entrega</label>
-                            <input type="date" id="data" />
-                        </div>
-
                         <button type="submit">
-                            Adicionar Tarefa
+                            Adicionar Lista de Tarefas
                         </button>
                     </form>
                 </div>

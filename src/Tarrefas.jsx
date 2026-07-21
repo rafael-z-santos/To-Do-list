@@ -3,7 +3,7 @@ import './Tarrefas.css'
 function Tarrefas() {  
    return (
         <div>
-            <h1>Lista de Tarefas</h1>
+            <h1></h1>
         </div>
    )
 }
