@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Menu from "./Menu";
-import Tarrefas from "./Tarrefas";
+import Feed from "./Feed";
 import Form from "./Form";
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
     return (
         <div>
             <Menu mostrarForm={mostrarForm} />
-            <Tarrefas />
+            <Feed />
             <Form isOpen={openForm} fechaForm={fecharForm} />
         </div>
     );

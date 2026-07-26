@@ -1,6 +1,6 @@
-import './Tarrefas.css'
+import './Feed.css'
 
-function Tarrefas() {  
+function Feed() {  
    return (
         <div>
             <h1></h1>
@@ -8,4 +8,4 @@ function Tarrefas() {
    )
 }
 
-export default Tarrefas;
+export default Feed;
