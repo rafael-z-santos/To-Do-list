@@ -18,8 +18,11 @@ app.get("/", async (req, res) => {
         const resultado = await db.query("SELECT NOW()");
         res.json({ ok: true, resultado: resultado.rows });
     } catch (erro) {
-        console.error("Erro ao conectar ao banco:", erro.message);
-        res.status(500).json({ erro: "Erro ao conectar ao banco", detalhe: erro.message });
+        console.error(erro);
+        res.status(500).json({
+            erro: erro.message,
+            codigo: erro.code
+        });
     }
 });
 
