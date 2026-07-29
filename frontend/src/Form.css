@@ -101,6 +101,42 @@ body {
     box-shadow: 0 0 8px rgba(37, 99, 235, .2);
 }
 
+.campo-cor {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+}
+
+.color-picker-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 30px;
+    border-radius: 18px;
+    border: 1px solid rgba(0, 0, 0, .12);
+    color: transparent;
+    font-weight: normal;
+    cursor: pointer;
+    transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+
+.color-picker-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .12);
+}
+
+.hidden-color-input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
 .form-tarefa button[type="submit"] {
     padding: 14px;
     border: none;
