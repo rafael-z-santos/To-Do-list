@@ -5,13 +5,13 @@ async function criarLista(req, res) {
     //res (response) → é usado para responder ao React.
 
     try {
-        const { nome, descricao } = req.body; //constante com od dados enviados pelo React (nome e descrição da lista)
+        const { nome, descricao, cor } = req.body; //constante com od dados enviados pelo React (nome, descrição e cor da lista)
 
         const resultado = await db.query(
-            `INSERT INTO lista (nome, descricao)
-             VALUES ($1, $2)
+            `INSERT INTO lista (nome, descricao, cor)
+             VALUES ($1, $2, $3)
              RETURNING *`,
-            [nome, descricao]
+            [nome, descricao, cor]
         ); // Insere a nova lista no banco de dados
 
         res.status(201).json(resultado.rows[0]);

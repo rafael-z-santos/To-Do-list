@@ -91,10 +91,12 @@ export default function Form({ isOpen, fechaForm }) {
             setDescricao("");
             setCor("#ff0000");
 
+            alert("Lista de tarefas criada com sucesso!");
+
             fechaForm();
 
         } catch (error) {
-            console.error("Erro ao enviar formulário:", error);
+            alert("Erro ao enviar formulário:", error);
         }
     }
     return null;
