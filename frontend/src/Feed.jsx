@@ -1,42 +1,51 @@
-import './Feed.css'
+import { useEffect, useState } from 'react';
+import './Feed.css';
 
-function Feed() {  
-   return (
-    <div class="todo-card">
-        <div class="todo-header">
-            <h3>Atividades da Semana</h3>
-            <p>Organize suas tarefas</p>
+function Feed() {
+    const [listas, setListas] = useState([]);
+
+    useEffect(() => {
+        async function listarFeed() {
+            try {
+                const resposta = await fetch("http://localhost:3001/listas");
+
+                if (!resposta.ok) {
+                    throw new Error("Falha ao buscar as listas");
+                }
+
+                const dados = await resposta.json();
+                setListas(dados);
+            } catch (error) {
+                console.error("Erro ao listar feed:", error);
+            }
+        }
+
+        listarFeed();
+    }, []);
+
+    return (
+        <div className="cards">
+            {listas.length > 0 ? (
+                listas.map((lista) => (
+                    <div className="todo-card" key={lista.id}>
+                    <div className="todo-header">
+                        <h3>{lista.nome}</h3>
+                        <p>{lista.descricao || "Sem descrição"}</p>
+                    </div>
+
+                    <div className="todo-empty">
+                        <p className="todo-empty-title">Lista disponível</p>
+                        <p className="todo-empty-text">
+                            Conteúdo pronto para ser exibido aqui.
+                        </p>
+                    </div>
+
+                    <button className="add-task">+ Nova Atividade</button>
+                </div>
+                ))
+            ) : null}
         </div>
-
-        <ul class="todo-list">
-            <li class="todo-item">
-                <div class="task-info">
-                    <h4>Estudar CSS</h4>
-                    <span>Prioridade: Alta</span>
-                </div>
-                <button class="edit-btn">✏️</button>
-            </li>
-
-            <li class="todo-item completed">
-                <div class="task-info">
-                    <h4>Fazer exercícios</h4>
-                    <span>Concluída</span>
-                </div>
-                <button class="edit-btn">✏️</button>
-            </li>
-
-            <li class="todo-item">
-                <div class="task-info">
-                    <h4>Enviar relatório</h4>
-                    <span>Data limite: 30/07/2026</span>
-                </div>
-                <button class="edit-btn">✏️</button>
-            </li>
-        </ul>
-
-        <button class="add-task">+ Nova Atividade</button>
-    </div>
-   )
+    );
 }
 
 export default Feed;

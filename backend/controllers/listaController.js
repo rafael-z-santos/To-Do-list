@@ -22,6 +22,19 @@ async function criarLista(req, res) {
      }
 }
 
+async function listarListas(req, res) {
+    try{
+        const resultado = await db.query(
+            "SELECT * FROM lista ORDER BY id DESC"
+        );
+        res.json(resultado.rows);
+    }catch(error){
+        console.error("Erro ao listar listas:", error);
+        res.status(500).json({ error: "Erro ao listar listas" });
+    }
+}
+
 module.exports = {
-    criarLista
+    criarLista,
+    listarListas
 };
