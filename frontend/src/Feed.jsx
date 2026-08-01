@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './Feed.css';
 
-function Feed() {
+function Feed({ mostrarFormCard }) {
     const [listas, setListas] = useState([]);
 
     useEffect(() => {
@@ -27,7 +27,11 @@ function Feed() {
         <div className="cards">
             {listas.length > 0 ? (
                 listas.map((lista) => (
-                    <div className="todo-card" key={lista.id}>
+                    <div
+                        className="todo-card"
+                        key={lista.id}
+                        style={{ "--card-accent": lista.cor || "#7c3aed" }}
+                    >
                     <div className="todo-header">
                         <h3>{lista.nome}</h3>
                         <p>{lista.descricao || "Sem descrição"}</p>
@@ -40,7 +44,7 @@ function Feed() {
                         </p>
                     </div>
 
-                    <button className="add-task">+ Nova Atividade</button>
+                    <button onClick={mostrarFormCard} className="add-task">+ Nova Atividade</button>
                 </div>
                 ))
             ) : null}

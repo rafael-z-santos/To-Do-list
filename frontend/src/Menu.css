@@ -1,76 +1,74 @@
-/* Remove margens padrão */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Fundo da página */
-body {
-    background: #f4f6f9;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Navbar */
-nav {
-    width: 90%;
-    max-width: 1000px;
-    margin: 30px auto;
-    padding: 18px 35px;
-
+.topbar {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto 22px;
+    padding: 20px 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    background: #ffffff;
-    border-radius: 15px;
-
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    gap: 16px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+    border-radius: 18px;
+    box-shadow: 0 10px 24px rgba(37, 99, 235, 0.12);
 }
 
-/* Título */
-nav h1 {
-    color: #2563eb;
-    font-size: 1.8rem;
-}
-
-/* Lista */
-nav ul {
+.brand-area {
     display: flex;
-    list-style: none;
-    gap: 20px;
+    flex-direction: column;
+    gap: 4px;
 }
 
-/* Links */
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    padding: 10px 18px;
-    border-radius: 8px;
-    transition: 0.3s;
+.brand-area h1 {
+    color: #2563eb;
+    font-size: 1.7rem;
+    font-weight: 700;
 }
 
-/* Hover */
-nav ul li a:hover {
+.brand-area p {
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+.menu-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 16px;
+    border: none;
+    border-radius: 999px;
     background: #2563eb;
-    color: white;
+    color: #ffffff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.22);
 }
 
-/* Responsividade */
+.menu-action:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.28);
+}
+
+.menu-action span {
+    font-size: 1.05rem;
+    line-height: 1;
+}
+
 @media (max-width: 700px) {
-    nav {
+    .topbar {
         flex-direction: column;
-        gap: 20px;
+        align-items: flex-start;
+        padding: 18px 18px;
     }
 
-    nav ul {
-        flex-direction: column;
+    .menu-action {
         width: 100%;
-    }
-
-    nav ul li a {
-        display: block;
-        text-align: center;
+        justify-content: center;
     }
 }

@@ -92,6 +92,7 @@ export default function Form({ isOpen, fechaForm }) {
             setCor("#ff0000");
 
             alert("Lista de tarefas criada com sucesso!");
+            window.location.reload();
 
             fechaForm();
 

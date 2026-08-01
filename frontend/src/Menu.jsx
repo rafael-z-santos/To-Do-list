@@ -3,16 +3,16 @@ import "./Menu.css";
 // recebe a função mostrarFormulario como parametros
 function Menu({ mostrarForm }) {
     return (
-        <nav>
-            <h1>Lista de Tarefas</h1>
+        <nav className="topbar">
+            <div className="brand-area">
+                <h1>Lista de Tarefas</h1>
+                <p>Organize suas listas com mais praticidade</p>
+            </div>
 
-            <ul>
-                <li>
-                    <button onClick={mostrarForm}>
-                        Add+
-                    </button>
-                </li>
-            </ul>
+            <button type="button" className="menu-action" onClick={mostrarForm}>
+                <span>＋</span>
+                Adicionar lista
+            </button>
         </nav>
     );
 }
